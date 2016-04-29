@@ -1,0 +1,19 @@
+, S_IRUSR|S_IWUSR);
+
+	length = lseek(in1,0,SEEK_END);
+	lseek(in1,0,SEEK_SET);
+	while(read(in1,&c,1) == 1)
+		write(out,&c,1);
+	close(in1);
+	lseek(out,length+1,SEEK_SET);
+	while(read(in2,&c,1) == 1)
+		write(out,&c,1);
+	close(in2);
+	close(out);
+	exit(0);
+
+
+
+
+
+}

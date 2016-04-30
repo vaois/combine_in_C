@@ -18,7 +18,7 @@ int main(int argc,char*argv[])
 	while(read(in1,&c,1) == 1)
 		write(out,&c,1);
 	close(in1);
-	lseek(out,length+1,SEEK_SET);
+	lseek(out,length,SEEK_SET);
 	while(read(in2,&c,1) == 1)
 		write(out,&c,1);
 	close(in2);
